@@ -76,7 +76,6 @@ function mermaid(type, value, format, meta) {
     if (options.filename === ""){
       options.filename = `${prefix}-${counter}`;
     }
-    puppeteerOpts += " --no-sandbox";
     var savePath = tmpfileObj.name + "." + options.format
     var newPath = path.join(outdir, `${options.filename}.${options.format}`);
     var fullCmd = `${cmd}  ${confFileOpts} ${puppeteerOpts} -w ${options.width} -s ${options.scale} -f -i "${tmpfileObj.name}" -t ${options.theme} -b ${options.background} -o "${savePath}"`
