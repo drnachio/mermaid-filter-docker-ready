@@ -79,7 +79,7 @@ function mermaid(type, value, format, meta) {
 
     var savePath = tmpfileObj.name + "." + options.format
     var newPath = path.join(outdir, `${options.filename}.${options.format}`);
-    var fullCmd = `${cmd}  ${confFileOpts} ${puppeteerOpts} -w ${options.width} -s ${options.scale} -f -i "${tmpfileObj.name}" -t ${options.theme} -b ${options.background} -o "${savePath}"`
+    var fullCmd = `${cmd}  ${confFileOpts} ${puppeteerOpts} --no-sandbox -w ${options.width} -s ${options.scale} -f -i "${tmpfileObj.name}" -t ${options.theme} -b ${options.background} -o "${savePath}"`
     // console.log(fullCmd, savePath)
     exec(fullCmd);
     //console.log(oldPath, newPath);
